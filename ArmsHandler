@@ -1,0 +1,28 @@
+import java.util.HashMap;
+
+/**
+ * Created by jarednielson on 3/1/16.
+ */
+
+//ArmsHandler class that implements Handler interface. If the user types in the arms command it will return the data associated with this handler
+
+public class ArmsHandler implements Handler {
+
+    @Override
+    public void handleIt(HashMap data) {
+
+        try {
+            System.out.println("You have chosen Arms!");
+            System.out.println("An Excellent Choice, Who doesn't want strong arms?!\n");
+            System.out.println("Here are some good workouts to try for arms");
+            System.out.println("    Incline  dumbbell curls");
+            System.out.println("    Standing barbell curls");
+            System.out.println("    Skull crushers");
+            System.out.println("    Cable triceps push downs");
+            System.out.println("    Preacher curls");
+            System.out.println("    Cable rope overhead triceps extension");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
