@@ -1,0 +1,29 @@
+import java.util.HashMap;
+
+/**
+ * Created by jarednielson on 3/1/16.
+ */
+
+//LegsHandler class that implements Handler interface. If the user types in the legs command it will return the data associated with this handler
+
+public class LegsHandler implements Handler {
+
+    @Override
+    public void handleIt(HashMap data) {
+
+        try {
+            System.out.println("You have chosen Legs!");
+            System.out.println("A Smart Choice, Legs are the biggest muscles in your body. Working them will release the chemicals for building muscle more than any other muscle group.\n");
+            System.out.println("Here are some good workouts to try for legs");
+            System.out.println("    Squats");
+            System.out.println("    Lunges");
+            System.out.println("    Leg extensions");
+            System.out.println("    Leg curls");
+            System.out.println("    Calf raises");
+            System.out.println("    Hack squats");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+
