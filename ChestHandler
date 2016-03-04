@@ -1,0 +1,31 @@
+/**
+ * Created by jarednielson on 3/1/16.
+ */
+
+
+import java.util.HashMap;
+
+//ChestHandler class that implements Handler interface. If the user types in the chest command it will return the data associated with this handler
+
+public class ChestHandler implements Handler {
+
+    @Override
+    public void handleIt(HashMap data)  {
+
+        try {
+            System.out.println("You have chosen Chest!");
+            System.out.println("A Good Choice, chest muscles are essential when it comes to posture, movement and power!\n");
+            System.out.println("Here are some good workouts to try for chest");
+            System.out.println("    Barbell bench press");
+            System.out.println("    Flat-dumbbell bench press");
+            System.out.println("    Incline dumbbell bench press");
+            System.out.println("    Dips");
+            System.out.println("    Fly");
+            System.out.println("    Peck deck machine");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+    }
+}
