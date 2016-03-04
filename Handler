@@ -1,0 +1,15 @@
+/**
+ * Created by jarednielson on 3/1/16.
+ */
+
+
+import java.util.HashMap;
+
+
+//Handler interface that is used to associate the command strings with the classes the implement the handler interface
+
+public interface Handler {
+
+    void handleIt(HashMap data) ;
+
+}
