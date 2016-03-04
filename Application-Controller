@@ -1,0 +1,39 @@
+/**
+ * Created by jarednielson on 3/1/16.
+ */
+
+import java.util.*;
+
+public class ApplicationController {
+
+    //Creates a new hashMap called listOfCommands which stores the items the user selects from as the key
+    //and the class that contains the related handler as the value.
+    private  HashMap<String,Handler> listOfCommands = new HashMap<String,Handler>();
+
+
+    public ApplicationController(){
+
+        //Puts the keys and values into the hashMap listOfCommands
+        listOfCommands.put("chest",       new ChestHandler());
+        listOfCommands.put("shoulders",   new ShouldersHandler());
+        listOfCommands.put("arms",        new ArmsHandler());
+        listOfCommands.put("back",        new BackHandler());
+        listOfCommands.put("legs",        new LegsHandler());
+        listOfCommands.put("cardio",      new CardioHandler());
+
+    }
+
+    //Creates the handleCommand method that takes the string workout and the hashMap data as parameters. It links the workout keyword to
+    //the listOfCommands hashMap.
+    public void handleCommand(String workout,HashMap data) {
+
+
+        Handler handler = listOfCommands.get(workout);
+        if (handler != null) {
+            handler.handleIt(data);
+        }
+
+
+
+    }
+}
