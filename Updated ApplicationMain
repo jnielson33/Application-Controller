@@ -1,0 +1,61 @@
+/**
+ * Created by jarednielson on 3/1/16.
+ */
+import java.util.Scanner;
+import java.util.HashMap;
+
+public class ApplicationMain {
+
+public static void main(String[] args) {
+
+
+
+
+
+    //Creates a new instance of the controller class and a scanner for user input
+    ApplicationController delegate = new ApplicationController();
+    delegate.mapCommand("chest",       new ChestHandler());
+    delegate.mapCommand("shoulders",   new ShouldersHandler());
+    delegate.mapCommand("arms",        new ArmsHandler());
+    delegate.mapCommand("back",        new BackHandler());
+    delegate.mapCommand("legs",        new LegsHandler());
+    delegate.mapCommand("cardio",      new CardioHandler());
+
+    Scanner input = new Scanner(System.in);
+
+        //Lists all the information that the user has to select from.
+    try {
+
+        System.out.println("--------Focus area of workout--------");
+        System.out.println("Chest");
+        System.out.println("Shoulders");
+        System.out.println("Arms");
+        System.out.println("Back");
+        System.out.println("Legs");
+        System.out.println("Cardio");
+        System.out.println("-------------------------------------");
+        System.out.print("Enter focus area here: ");
+
+        //Stores the users input as a string called workout
+        String workout = input.nextLine();
+
+        //Creates a new string called newWorkout that converts the workout string to lowercase to prevent user error.
+        String newWorkout = workout.toLowerCase();
+        System.out.print("\n");
+
+        //Creates a new hashMap called data
+        HashMap data = new HashMap();
+
+        //Stores a string "newWorkout" as the key and the newWorkout string created above as the value
+        data.put("newWorkout", newWorkout);
+
+        //calls the instance of the ApplicationController called delegate and passes it the handleCommand method which
+        //takes the newWorkout string as the key and data as the value
+        delegate.handleCommand(newWorkout, data);
+
+    } catch (Exception e) {
+        System.out.println("Sorry. Your focus area does not yet exist in our database.");
+    }
+
+    }
+}
